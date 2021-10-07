@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t study221998/react-test script:-f ./client/Dockerfile.dev ./client
+  - docker build -t study221998/react-test -f ./client/Dockerfile.dev ./client
 
 script: 
   - docker run -e CI=true study221998/react-test npm test 
@@ -22,4 +22,6 @@ after_sucess:
   - docker push study221998/multi-nginx
   - docker push study221998/multi-server
   - docker push study221998/multi-worker
+
+The command "docker build -t [secure]/react-test script:-f ./client/Dockerfile.dev ./client" failed and exited with 1 during .
 
